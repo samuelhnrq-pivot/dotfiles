@@ -1,4 +1,8 @@
-export VOLTA_HOME="$HOME/.volta"
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
 
+export VOLTA_HOME="$HOME/.volta"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH="$VOLTA_HOME/bin:$HOME/.local/bin:$PATH"
 
