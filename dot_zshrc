@@ -15,10 +15,16 @@ export PATH="$VOLTA_HOME/bin:$HOME/.local/bin:$PATH"
 # eval "$(chezmoi completion zsh)"
 eval "$(oh-my-posh init zsh --config /opt/homebrew/opt/oh-my-posh/themes/gmay.omp.json)"
 
-function pfrontstart() {
-    OLD_DIR=$PWD
-    cd ~/code/pivot/frontend
+alias cdpvfront="cd ~/code/pivot/frontend"
+alias cdpv="cd ~/code/pivot"
+
+function pvfront() {
+    cdpvfront
     pnpm run dev
-    cd $OLD_DIR
+}
+
+function pvgentypes() {
+    cdpvfront
+    pnpm run generate-backend-types
 }
 
