@@ -6,14 +6,12 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-export EDITOR=vim
-export VISUAL=$EDITOR
-export VOLTA_HOME="$HOME/.volta"
-#GNUBIN="$(brew --prefix)/opt/coreutils/libexec/gnubin"
-export PATH="$VOLTA_HOME/bin:$HOME/.local/bin:$PATH"
-
 # eval "$(chezmoi completion zsh)"
 eval "$(oh-my-posh init zsh --config /opt/homebrew/opt/oh-my-posh/themes/gmay.omp.json)"
+
+GNUBIN="$(brew --prefix)/opt/coreutils/libexec/gnubin"
+
+export PATH="$GNUBIN:$PATH"
 
 alias cdpvfront="cd ~/code/pivot/frontend"
 alias cdpv="cd ~/code/pivot"
@@ -28,3 +26,10 @@ function pvgentypes() {
     pnpm run generate-backend-types
 }
 
+
+# bun completions
+[ -s "/Users/samosaara/.bun/_bun" ] && source "/Users/samosaara/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
