@@ -1,0 +1,11 @@
+# vim: syntax=zsh
+
+source {{.chezmoi.homeDir}}/.zprezto/runcoms/zshenv
+source "$HOME/.cargo/env"
+
+export OP_ACCOUNT=teampivot.1password.com
+export EDITOR=vim
+export VISUAL=$EDITOR
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$HOME/.local/bin:$PATH:$HOME/.radicle/bin"
+
